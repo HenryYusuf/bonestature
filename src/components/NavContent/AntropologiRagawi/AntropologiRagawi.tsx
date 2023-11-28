@@ -72,6 +72,14 @@ function AntropologiRagawi() {
   // Hapus nilai Infinity dari hasil sorting
   const resultArray = sortedArray.filter((value) => !isNaN(value));
 
+  const arrayWithoutInfinity = resultArray.filter((value) => isFinite(value));
+
+  // Mendapatkan nilai terendah setelah menghilangkan Infinity
+  const nilaiTerendah = Math.min(...arrayWithoutInfinity);
+
+  // Mendapatkan nilai tertinggi setelah menghilangkan Infinity
+  const nilaiTertinggi = Math.max(...arrayWithoutInfinity);
+
   return (
     <>
       <Card>
@@ -82,14 +90,16 @@ function AntropologiRagawi() {
             Jawa, tetapi formula ini dapat digunakan pada seluruh etnis dan
             jenis kelamin
           </p>
+          <p className="font-semibold text-base">
+            <span className="text-red-500">* </span>
+            Masukkan panjang tulang yang dimiliki dalam{" "}
+            <span className="text-info">milimeter (mm)</span>
+          </p>
           <div className="divider"></div>
           <div className="grid grid-cols-4 gap-6">
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Fermur Kanan (y1)
+              <label className="text-base block mb-2">
+                Panjang Tulang Femur Kanan
               </label>
               <input
                 type="text"
@@ -102,11 +112,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Fermur Kiri (y2)
+              <label className="text-base block mb-2">
+                Panjang Tulang Femur Kiri
               </label>
               <input
                 type="text"
@@ -119,11 +126,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Tibia Kanan (y3)
+              <label className="text-base block mb-2">
+                Panjang Tulang Tibia Kanan
               </label>
               <input
                 type="text"
@@ -136,11 +140,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Tibia Kiri (y4)
+              <label className="text-base block mb-2">
+                Panjang Tulang Tibia Kiri
               </label>
               <input
                 type="text"
@@ -153,11 +154,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Fibula Kanan (y5)
+              <label className="text-base block mb-2">
+                Panjang Tulang Fibula Kanan
               </label>
               <input
                 type="text"
@@ -170,11 +168,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Fibula Kiri (y6)
+              <label className="text-base block mb-2">
+                Panjang Tulang Fibula Kiri
               </label>
               <input
                 type="text"
@@ -187,11 +182,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Humerus Kanan (y7)
+              <label className="text-base block mb-2">
+                Panjang Tulang Humerus Kanan
               </label>
               <input
                 type="text"
@@ -204,11 +196,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Humerus Kiri (y8)
+              <label className="text-base block mb-2">
+                Panjang Tulang Humerus Kiri
               </label>
               <input
                 type="text"
@@ -221,11 +210,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Radius Kanan (y9)
+              <label className="text-base block mb-2">
+                Panjang Tulang Radius Kanan
               </label>
               <input
                 type="text"
@@ -238,11 +224,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Radius Kiri (y10)
+              <label className="text-base block mb-2">
+                Panjang Tulang Radius Kiri
               </label>
               <input
                 type="text"
@@ -255,11 +238,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Ulna Kanan (y11)
+              <label className="text-base block mb-2">
+                Panjang Tulang Ulna Kanan
               </label>
               <input
                 type="text"
@@ -272,11 +252,8 @@ function AntropologiRagawi() {
               />
             </div>
             <div>
-              <label
-                htmlFor="inputFermurKanan"
-                className="text-base block mb-2"
-              >
-                Panjang Tulang Ulna Kiri (y12)
+              <label className="text-base block mb-2">
+                Panjang Tulang Ulna Kiri
               </label>
               <input
                 type="text"
@@ -300,26 +277,10 @@ function AntropologiRagawi() {
         ""
       ) : (
         <Card>
-          <div className="overflow-x-auto">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                {resultArray
-                  .filter((height) => height !== Infinity)
-                  .map((height, index) => (
-                    <tr key={index} className="hover">
-                      <td>{index + 1}</td>
-                      <td>{height}</td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+          <p>
+            Hasil Perkiraan Tinggi badan yaitu {nilaiTerendah}
+            {nilaiTertinggi === nilaiTerendah ? "" : ` - ${nilaiTertinggi} `}mm
+          </p>
         </Card>
       )}
     </>

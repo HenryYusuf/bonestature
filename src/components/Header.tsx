@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header className="bg-base-300 p-4 shadow-lg">
-      <button className="float-left">
+    <header className="bg-base-300 p-3 shadow-lg">
+      <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -17,9 +17,6 @@ const Header = () => {
           />
         </svg>
       </button>
-      <h2 className="text-center clear-right">
-        Jika ada pertanyaan hubungi: 08xxxxxx
-      </h2>
     </header>
   );
 };

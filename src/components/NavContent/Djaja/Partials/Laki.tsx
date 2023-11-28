@@ -36,27 +36,32 @@ const Laki = () => {
         tinggi3 + 3.7954
       );
 
-      const resultString = `Range nilai terendah: ${resultMin.toFixed(
+      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
         2
-      )} - Range nilai tertinggi: ${resultMax.toFixed(2)}
-        Range nilai perpotongan: ${intersectionMin.toFixed(
-          2
-        )} - ${intersectionMax.toFixed(2)}`;
+      )} - ${resultMax.toFixed(2)} cm (Range Terendah - Tertinggi) atau
+        ${intersectionMin.toFixed(2)} - ${intersectionMax.toFixed(
+        2
+      )} cm (Range Nilai Perpotongan)`;
 
       setResult(resultString);
     } else if (y1) {
       // Kalkulasi untuk satu variabel (y1)
       const tinggi = 86.8921 + 2.1195 * y1Value;
-      const resultString = `Tinggi badan: ${tinggi.toFixed(2)}`;
+      const resultMinTibia = Math.min(tinggi - 3.9499);
+      const resultMaxTibia = Math.max(tinggi + 3.9499);
+      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia.toFixed(
+        2
+      )} - ${resultMaxTibia.toFixed(2)} cm`;
       setResult(resultString);
     } else if (y2) {
       // Kalkulasi untuk satu variabel (y2)
       const tinggi = 86.0628 + 2.1427 * y2Value;
-      const resultString = `Tinggi badan: ${tinggi.toFixed(2)}`;
+      const resultMinFibula = Math.min(tinggi - 3.7954);
+      const resultMaxFibula = Math.max(tinggi + 3.7954);
+      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula.toFixed(
+        2
+      )} - ${resultMaxFibula.toFixed(2)} cm`;
       setResult(resultString);
-    } else {
-      // Kasus ketika tidak ada variabel yang diisi
-      setResult("Mohon isi setidaknya satu variabel.");
     }
   };
 
@@ -65,7 +70,7 @@ const Laki = () => {
       <div className="grid grid-cols-2">
         <div>
           <label htmlFor="inputTulangTibia" className="text-base block mb-2">
-            Panjang Tulang Tibia (y1)
+            Panjang Tulang Tibia
           </label>
           <input
             type="text"
@@ -77,7 +82,7 @@ const Laki = () => {
         </div>
         <div>
           <label htmlFor="inputTualngFibula" className="text-base block mb-2">
-            Panjang Tulang Fibula (y2)
+            Panjang Tulang Fibula
           </label>
           <input
             type="text"
