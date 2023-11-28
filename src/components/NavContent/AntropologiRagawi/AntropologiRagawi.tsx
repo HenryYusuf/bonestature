@@ -279,7 +279,7 @@ function AntropologiRagawi() {
         <Card>
           <p>
             Hasil Perkiraan Tinggi badan: {nilaiTerendah}
-            {nilaiTertinggi === nilaiTerendah ? "" : ` - ${nilaiTertinggi} `}mm
+            {nilaiTertinggi === nilaiTerendah ? "" : ` - ${nilaiTertinggi} `} mm
           </p>
         </Card>
       )}

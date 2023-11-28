@@ -33,14 +33,14 @@ function Djaja() {
         <div className="card-body">
           <p className="font-semibold text-base">
             <span className="text-red-500">* </span>
-            Masukkan dalam satuan{" "}
-            <span className="text-info">centimeter (cm)</span>
-          </p>
-          <p className="font-semibold text-base">
-            <span className="text-red-500">* </span>
             Dapat menggunakan tulang tibia saja, fibula saja, atau keduanya.
             Jika menggunakan keduanya, masukkan panjang tulang dari individu dan
             lateralitas yang sama
+          </p>
+          <p className="font-semibold text-base">
+            <span className="text-red-500">* </span>
+            Masukkan dalam satuan{" "}
+            <span className="text-info">centimeter (cm)</span>
           </p>
           <div className="divider"></div>
           {selectedTab === "laki" ? <Laki /> : <Perempuan />}
