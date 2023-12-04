@@ -11,9 +11,9 @@ const Laki = () => {
 
     if (!isNaN(y1Value) && !isNaN(y2Value)) {
       // Kalkulasi untuk dua variabel
-      const tinggi = 82.7996 + 0.811 * y1Value + 1.4191 * y2Value;
-      // const tinggi2 = 86.8921 + 2.1195 * y1Value;
-      // const tinggi3 = 86.0628 + 2.1427 * y2Value;
+      const tinggi1 = 82.7996 + 0.811 * y1Value + 1.4191 * y2Value;
+      const tinggi2 = 86.8921 + 2.1195 * y1Value;
+      const tinggi3 = 86.0628 + 2.1427 * y2Value;
 
       // const resultMin = Math.min(
       //   tinggi1 - 3.7294,
@@ -25,24 +25,28 @@ const Laki = () => {
       //   tinggi2 + 3.9499,
       //   tinggi3 + 3.7954
       // );
-      // const intersectionMin = Math.max(
-      //   tinggi1 - 3.7294,
-      //   tinggi2 - 3.9499,
-      //   tinggi3 - 3.7954
-      // );
-      // const intersectionMax = Math.min(
-      //   tinggi1 + 3.7294,
-      //   tinggi2 + 3.9499,
-      //   tinggi3 + 3.7954
-      // );
+      const intersectionMin = Math.max(
+        tinggi1 - 3.7294,
+        tinggi2 - 3.9499,
+        tinggi3 - 3.7954
+      );
+      const intersectionMax = Math.min(
+        tinggi1 + 3.7294,
+        tinggi2 + 3.9499,
+        tinggi3 + 3.7954
+      );
 
-      const resultMin = tinggi - 3.7294;
-      const resultMax = tinggi + 3.7294;
+      const resultMin = tinggi1 - 3.7294;
+      const resultMax = tinggi1 + 3.7294;
 
-      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi) atau
-      //   ${intersectionMin} - ${intersectionMax} cm (Range Nilai Perpotongan)`;
+      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
+        5
+      )} - ${resultMax.toFixed(5)} cm (Range Terendah - Tertinggi) atau
+        ${intersectionMin.toFixed(5)} - ${intersectionMax.toFixed(
+        5
+      )} cm (Range Nilai Perpotongan)`;
 
-      const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
+      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
 
       setResult(resultString);
     } else if (y1) {

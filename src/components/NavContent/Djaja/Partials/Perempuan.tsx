@@ -11,9 +11,9 @@ const Perempuan = () => {
 
     if (!isNaN(y1Value) && !isNaN(y2Value)) {
       // Kalkulasi untuk dua variabel
-      const tinggi = 76.484 + 0.2428 * y1Value + 2.0034 * y2Value;
-      // const tinggi2 = 91.6705 + 1.7849 * y1Value;
-      // const tinggi3 = 77.1995 + 2.2283 * y2Value;
+      const tinggi1 = 76.484 + 0.2428 * y1Value + 2.0034 * y2Value;
+      const tinggi2 = 91.6705 + 1.7849 * y1Value;
+      const tinggi3 = 77.1995 + 2.2283 * y2Value;
 
       // const resultMin = Math.min(
       //   tinggi1 - 4.6463,
@@ -25,24 +25,28 @@ const Perempuan = () => {
       //   tinggi2 + 5.0552,
       //   tinggi3 + 4.6384
       // );
-      // const intersectionMin = Math.max(
-      //   tinggi1 - 4.6463,
-      //   tinggi2 - 5.0552,
-      //   tinggi3 - 4.6384
-      // );
-      // const intersectionMax = Math.min(
-      //   tinggi1 + 4.6463,
-      //   tinggi2 + 5.0552,
-      //   tinggi3 + 4.6384
-      // );
+      const intersectionMin = Math.max(
+        tinggi1 - 4.6463,
+        tinggi2 - 5.0552,
+        tinggi3 - 4.6384
+      );
+      const intersectionMax = Math.min(
+        tinggi1 + 4.6463,
+        tinggi2 + 5.0552,
+        tinggi3 + 4.6384
+      );
 
-      const resultMin = tinggi - 4.6463;
-      const resultMax = tinggi + 4.6463;
+      const resultMin = tinggi1 - 4.6463;
+      const resultMax = tinggi1 + 4.6463;
 
-      const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
+      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
 
-      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi) atau
-      //   ${intersectionMin} - ${intersectionMax} cm (Range Nilai Perpotongan)`;
+      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
+        5
+      )} - ${resultMax.toFixed(5)} cm (Range Terendah - Tertinggi) atau
+        ${intersectionMin.toFixed(5)} - ${intersectionMax.toFixed(
+        5
+      )} cm (Range Nilai Perpotongan)`;
 
       setResult(resultString);
     } else if (y1) {
