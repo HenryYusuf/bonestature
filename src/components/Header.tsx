@@ -1,7 +1,11 @@
-const Header = () => {
+interface PropsHeader {
+  onCollapsed: () => void;
+}
+
+const Header = ({ onCollapsed }: PropsHeader) => {
   return (
-    <header className="bg-base-300 p-3 shadow-lg">
-      <button>
+    <header className="bg-base-300 p-3 sticky top-0 z-40 shadow-lg">
+      <button onClick={onCollapsed}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

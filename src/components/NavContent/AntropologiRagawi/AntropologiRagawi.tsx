@@ -84,21 +84,21 @@ function AntropologiRagawi() {
     <>
       <Card>
         <div className="card-body">
-          <p className="font-semibold text-base">
+          <p className="font-semibold text-base max-sm:text-sm">
             <span className="text-red-500">* </span>
             Sampel yang digunakan pada pembuatan formula adalah laki-laki etnis
             Jawa, tetapi formula ini dapat digunakan pada seluruh etnis dan
             jenis kelamin
           </p>
-          <p className="font-semibold text-base">
+          <p className="font-semibold text-base max-sm:text-sm">
             <span className="text-red-500">* </span>
             Masukkan panjang tulang yang dimiliki dalam{" "}
             <span className="text-info">milimeter (mm)</span>
           </p>
           <div className="divider"></div>
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-2">
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Femur Kanan
               </label>
               <input
@@ -109,10 +109,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y1", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Femur Kiri
               </label>
               <input
@@ -123,10 +124,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y2", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Tibia Kanan
               </label>
               <input
@@ -137,10 +139,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y3", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Tibia Kiri
               </label>
               <input
@@ -151,10 +154,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y4", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Fibula Kanan
               </label>
               <input
@@ -165,10 +169,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y5", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Fibula Kiri
               </label>
               <input
@@ -179,10 +184,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y6", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Humerus Kanan
               </label>
               <input
@@ -193,10 +199,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y7", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Humerus Kiri
               </label>
               <input
@@ -207,10 +214,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y8", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Radius Kanan
               </label>
               <input
@@ -221,10 +229,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y9", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Radius Kiri
               </label>
               <input
@@ -235,10 +244,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y10", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Ulna Kanan
               </label>
               <input
@@ -249,10 +259,11 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y11", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
             <div>
-              <label className="text-base block mb-2">
+              <label className="text-base block mb-2 max-sm:text-sm">
                 Panjang Tulang Ulna Kiri
               </label>
               <input
@@ -263,6 +274,7 @@ function AntropologiRagawi() {
                 onChange={(e) =>
                   handleVariableChange("y12", Number(e.target.value))
                 }
+                inputMode="numeric"
               />
             </div>
           </div>
@@ -277,15 +289,21 @@ function AntropologiRagawi() {
         ""
       ) : (
         <Card>
-          <p>
-            Hasil Perkiraan Tinggi badan: {nilaiTerendah}
-            {nilaiTertinggi === nilaiTerendah ? "" : ` - ${nilaiTertinggi} `} mm
-            atau {(nilaiTerendah * 0.1).toFixed(2)}{" "}
-            {nilaiTertinggi === nilaiTerendah
-              ? ""
-              : ` - ${(nilaiTertinggi * 0.1).toFixed(2)} `}{" "}
-            cm
-          </p>
+          {!isFinite(nilaiTerendah) && !isFinite(nilaiTertinggi) ? (
+            "Silahkan isi nilai panjang terlebih dahulu"
+          ) : (
+            <p>
+              Hasil Perkiraan Tinggi badan: {nilaiTerendah}
+              {nilaiTertinggi === nilaiTerendah
+                ? ""
+                : ` - ${nilaiTertinggi} `}{" "}
+              mm atau {(nilaiTerendah * 0.1).toFixed(2)}{" "}
+              {nilaiTertinggi === nilaiTerendah
+                ? ""
+                : ` - ${(nilaiTertinggi * 0.1).toFixed(2)} `}{" "}
+              cm
+            </p>
+          )}
         </Card>
       )}
     </>

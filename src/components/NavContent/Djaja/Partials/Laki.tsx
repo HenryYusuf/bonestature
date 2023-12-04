@@ -11,37 +11,38 @@ const Laki = () => {
 
     if (!isNaN(y1Value) && !isNaN(y2Value)) {
       // Kalkulasi untuk dua variabel
-      const tinggi1 = 82.7996 + 0.811 * y1Value + 1.4191 * y2Value;
-      const tinggi2 = 86.8921 + 2.1195 * y1Value;
-      const tinggi3 = 86.0628 + 2.1427 * y2Value;
+      const tinggi = 82.7996 + 0.811 * y1Value + 1.4191 * y2Value;
+      // const tinggi2 = 86.8921 + 2.1195 * y1Value;
+      // const tinggi3 = 86.0628 + 2.1427 * y2Value;
 
-      const resultMin = Math.min(
-        tinggi1 - 3.7294,
-        tinggi2 - 3.9499,
-        tinggi3 - 3.7954
-      );
-      const resultMax = Math.max(
-        tinggi1 + 3.7294,
-        tinggi2 + 3.9499,
-        tinggi3 + 3.7954
-      );
-      const intersectionMin = Math.max(
-        tinggi1 - 3.7294,
-        tinggi2 - 3.9499,
-        tinggi3 - 3.7954
-      );
-      const intersectionMax = Math.min(
-        tinggi1 + 3.7294,
-        tinggi2 + 3.9499,
-        tinggi3 + 3.7954
-      );
+      // const resultMin = Math.min(
+      //   tinggi1 - 3.7294,
+      //   tinggi2 - 3.9499,
+      //   tinggi3 - 3.7954
+      // );
+      // const resultMax = Math.max(
+      //   tinggi1 + 3.7294,
+      //   tinggi2 + 3.9499,
+      //   tinggi3 + 3.7954
+      // );
+      // const intersectionMin = Math.max(
+      //   tinggi1 - 3.7294,
+      //   tinggi2 - 3.9499,
+      //   tinggi3 - 3.7954
+      // );
+      // const intersectionMax = Math.min(
+      //   tinggi1 + 3.7294,
+      //   tinggi2 + 3.9499,
+      //   tinggi3 + 3.7954
+      // );
 
-      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
-        2
-      )} - ${resultMax.toFixed(2)} cm (Range Terendah - Tertinggi) atau
-        ${intersectionMin.toFixed(2)} - ${intersectionMax.toFixed(
-        2
-      )} cm (Range Nilai Perpotongan)`;
+      const resultMin = tinggi - 3.7294;
+      const resultMax = tinggi + 3.7294;
+
+      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi) atau
+      //   ${intersectionMin} - ${intersectionMax} cm (Range Nilai Perpotongan)`;
+
+      const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
 
       setResult(resultString);
     } else if (y1) {
@@ -49,27 +50,26 @@ const Laki = () => {
       const tinggi = 86.8921 + 2.1195 * y1Value;
       const resultMinTibia = Math.min(tinggi - 3.9499);
       const resultMaxTibia = Math.max(tinggi + 3.9499);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia.toFixed(
-        2
-      )} - ${resultMaxTibia.toFixed(2)} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia} - ${resultMaxTibia} cm`;
       setResult(resultString);
     } else if (y2) {
       // Kalkulasi untuk satu variabel (y2)
       const tinggi = 86.0628 + 2.1427 * y2Value;
       const resultMinFibula = Math.min(tinggi - 3.7954);
       const resultMaxFibula = Math.max(tinggi + 3.7954);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula.toFixed(
-        2
-      )} - ${resultMaxFibula.toFixed(2)} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula} - ${resultMaxFibula} cm`;
       setResult(resultString);
     }
   };
 
   return (
     <>
-      <div className="grid grid-cols-2">
-        <div>
-          <label htmlFor="inputTulangTibia" className="text-base block mb-2">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1">
+        <div className="mb-2">
+          <label
+            htmlFor="inputTulangTibia"
+            className="text-base block mb-2 max-sm:text-sm"
+          >
             Panjang Tulang Tibia
           </label>
           <input
@@ -80,8 +80,11 @@ const Laki = () => {
             onChange={(e) => setY1(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="inputTualngFibula" className="text-base block mb-2">
+        <div className="mb-2">
+          <label
+            htmlFor="inputTualngFibula"
+            className="text-base block mb-2 max-sm:text-sm"
+          >
             Panjang Tulang Fibula
           </label>
           <input
@@ -93,7 +96,7 @@ const Laki = () => {
           />
         </div>
       </div>
-      <div className="card-actions justify-start mt-4">
+      <div className="card-actions justify-start mt-2">
         <button className="btn btn-primary" onClick={hitungTinggi}>
           Hitung Tinggi
         </button>
