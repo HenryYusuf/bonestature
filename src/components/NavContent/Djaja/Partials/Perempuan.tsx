@@ -51,17 +51,21 @@ const Perempuan = () => {
       setResult(resultString);
     } else if (y1) {
       // Kalkulasi untuk satu variabel (y1)
-      const tinggi = 86.8921 + 2.1195 * y1Value;
+      const tinggi = 91.6705 + 1.7849 * y1Value;
       const resultMinTibia = Math.min(tinggi - 5.0552);
       const resultMaxTibia = Math.max(tinggi + 5.0552);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia} - ${resultMaxTibia} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia.toFixed(
+        5
+      )} - ${resultMaxTibia.toFixed(5)} cm`;
       setResult(resultString);
     } else if (y2) {
       // Kalkulasi untuk satu variabel (y2)
-      const tinggi = 86.0628 + 2.1427 * y2Value;
+      const tinggi = 77.1995 + 2.2283 * y2Value;
       const resultMinFibula = Math.min(tinggi - 4.6384);
       const resultMaxFibula = Math.max(tinggi + 4.6384);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula} - ${resultMaxFibula} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula.toFixed(
+        5
+      )} - ${resultMaxFibula.toFixed(5)} cm`;
       setResult(resultString);
     }
   };

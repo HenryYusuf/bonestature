@@ -54,14 +54,18 @@ const Laki = () => {
       const tinggi = 86.8921 + 2.1195 * y1Value;
       const resultMinTibia = Math.min(tinggi - 3.9499);
       const resultMaxTibia = Math.max(tinggi + 3.9499);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia} - ${resultMaxTibia} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinTibia.toFixed(
+        5
+      )} - ${resultMaxTibia.toFixed(5)} cm`;
       setResult(resultString);
     } else if (y2) {
       // Kalkulasi untuk satu variabel (y2)
       const tinggi = 86.0628 + 2.1427 * y2Value;
       const resultMinFibula = Math.min(tinggi - 3.7954);
       const resultMaxFibula = Math.max(tinggi + 3.7954);
-      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula} - ${resultMaxFibula} cm`;
+      const resultString = `Perkiraan Tinggi badan: ${resultMinFibula.toFixed(
+        5
+      )} - ${resultMaxFibula.toFixed(5)} cm`;
       setResult(resultString);
     }
   };
