@@ -39,6 +39,12 @@ function Djaja() {
           </p>
           <p className="font-semibold text-base max-sm:text-sm">
             <span className="text-red-500">* </span>
+            Harap ubah <span className="text-info">koma(,)</span> menjadi{" "}
+            <span className="text-info">titik(.)</span> jika angka yang
+            diberikan berupa desimal.
+          </p>
+          <p className="font-semibold text-base max-sm:text-sm">
+            <span className="text-red-500">* </span>
             Masukkan dalam satuan{" "}
             <span className="text-info">centimeter (cm)</span>
           </p>

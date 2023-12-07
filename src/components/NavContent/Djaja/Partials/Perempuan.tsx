@@ -71,11 +71,11 @@ const Perempuan = () => {
   };
   return (
     <>
-      <div className="grid grid-cols-2 max-sm:grid-cols-1">
+      <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
         <div className="mb-2">
           <label
             htmlFor="inputTulangTibia"
-            className="text-base block mb-2 max-sm:text-sm"
+            className="text-base block mb-2 max-sm:text-sm max-md:text-sm"
           >
             Panjang Tulang Tibia
           </label>
@@ -84,13 +84,14 @@ const Perempuan = () => {
             placeholder="Type here"
             className="input input-bordered w-full max-w-lg"
             value={y1}
-            onChange={(e) => setY1(e.target.value)}
+            onChange={(e) => setY1(e.target.value.replace(",", "."))}
+            inputMode="numeric"
           />
         </div>
         <div className="mb-2">
           <label
             htmlFor="inputTualngFibula"
-            className="text-base block mb-2 max-sm:text-sm"
+            className="text-base block mb-2 max-sm:text-sm max-md:text-sm"
           >
             Panjang Tulang Fibula
           </label>
@@ -99,7 +100,8 @@ const Perempuan = () => {
             placeholder="Type here"
             className="input input-bordered w-full max-w-lg"
             value={y2}
-            onChange={(e) => setY2(e.target.value)}
+            onChange={(e) => setY2(e.target.value.replace(",", "."))}
+            inputMode="numeric"
           />
         </div>
       </div>
