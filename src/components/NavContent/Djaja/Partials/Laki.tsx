@@ -36,12 +36,15 @@ const Laki = () => {
         tinggi3 + 3.7954
       );
 
-      const resultMin = tinggi1 - 3.7294;
-      const resultMax = tinggi1 + 3.7294;
+      // const resultMin = tinggi1 - 3.7294;
+      // const resultMax = tinggi1 + 3.7294;
 
-      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
+      const resultMaxTibia = Math.max(tinggi2 + 3.9499);
+      const resultMinFibula = Math.min(tinggi3 - 3.7954);
+
+      const resultString = `Perkiraan tinggi badan: ${resultMinFibula.toFixed(
         5
-      )} - ${resultMax.toFixed(5)} cm (Range Terendah - Tertinggi) atau
+      )} - ${resultMaxTibia.toFixed(5)} cm (Range Terendah - Tertinggi) atau
         ${intersectionMin.toFixed(5)} - ${intersectionMax.toFixed(
         5
       )} cm (Range Nilai Perpotongan)`;

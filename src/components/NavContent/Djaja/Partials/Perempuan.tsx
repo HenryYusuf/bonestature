@@ -36,14 +36,15 @@ const Perempuan = () => {
         tinggi3 + 4.6384
       );
 
-      const resultMin = tinggi1 - 4.6463;
-      const resultMax = tinggi1 + 4.6463;
+      // const resultMin = tinggi1 - 4.6463;
+      // const resultMax = tinggi1 + 4.6463;
 
-      // const resultString = `Perkiraan tinggi badan: ${resultMin} - ${resultMax} cm (Range Terendah - Tertinggi)`;
+      const resultMaxTibia = Math.max(tinggi2 + 5.0552);
+      const resultMinFibula = Math.min(tinggi3 - 4.6384);
 
-      const resultString = `Perkiraan tinggi badan: ${resultMin.toFixed(
+      const resultString = `Perkiraan tinggi badan: ${resultMinFibula.toFixed(
         5
-      )} - ${resultMax.toFixed(5)} cm (Range Terendah - Tertinggi) atau
+      )} - ${resultMaxTibia.toFixed(5)} cm (Range Terendah - Tertinggi) atau
         ${intersectionMin.toFixed(5)} - ${intersectionMax.toFixed(
         5
       )} cm (Range Nilai Perpotongan)`;
