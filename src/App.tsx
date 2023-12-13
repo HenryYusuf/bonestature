@@ -8,7 +8,7 @@ import Welcome from "./pages/Welcome";
 const TAB_ITEMS: string[] = [
   "ANTROPOLOGI RAGAWI",
   "DJAJA SURYA ATMADJA",
-  // "PEARSON",
+  "PEARSON",
   // "SJOVOLD",
   // "MAHAKKANUKRAUH",
   // "STEVENSON",
