@@ -11,7 +11,7 @@ const TAB_ITEMS: string[] = [
   "PEARSON",
   // "SJOVOLD",
   // "MAHAKKANUKRAUH",
-  // "STEVENSON",
+  "STEVENSON",
 ];
 
 function App() {
