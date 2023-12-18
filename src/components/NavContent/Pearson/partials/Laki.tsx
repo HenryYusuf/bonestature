@@ -39,19 +39,49 @@ const Laki = () => {
       //  Tinggi badan = 0,913*y1 + 0,6*y2 + 1,225*y3 + 0,187*y4 + 67,049
       const resultTinggiTotal = tinggi1 + tinggi2 + tinggi3 - tinggi4 + 67.049;
 
+      //  Tinggi badan = 1,22*y1 + 1,08*y2 + 71,443
+      const resultTinggiTotalFemurFibia1 =
+        1.22 * y1Value + 1.08 * y2Value + 71.443;
+
+      //  Tinggi badan = 1,159*y1 + 1,159*y2 + 71,272
+      const resultTinggiTotalFemurFibia2 =
+        1.159 * y1Value + 1.159 * y2Value + 71.272;
+
+      //   Tinggi badan = 1,03*y1 + 1,557*y3 + 68,397
+      const resultTinggiTotalFemurHumerus =
+        1.03 * y1Value + 1.557 * y3Value + 68.397;
+
+      // 	Tinggi badan = 2,769*y3 + 0,195*y4 + 69,788
+      const resultTinggiHumerusRadius1 =
+        2.769 * y3Value + 0.195 * y4Value + 69.788;
+
+      // 	Tinggi badan = 1,73*y3 + 1,73*y4 + 66,885
+      const resultTinggiHumerusRadius2 =
+        1.73 * y3Value + 1.73 * y4Value + 66.885;
+
       const resultMinTinggi = Math.min(
         resultTinggiFemur,
         resultTinggiTibia,
         resultTinggiHumerus,
         resultTinggiRadius,
-        resultTinggiTotal
+        resultTinggiTotal,
+        resultTinggiTotalFemurFibia1,
+        resultTinggiTotalFemurFibia2,
+        resultTinggiTotalFemurHumerus,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
       );
       const resultMaxTinggi = Math.max(
         resultTinggiFemur,
         resultTinggiTibia,
         resultTinggiHumerus,
         resultTinggiRadius,
-        resultTinggiTotal
+        resultTinggiTotal,
+        resultTinggiTotalFemurFibia1,
+        resultTinggiTotalFemurFibia2,
+        resultTinggiTotalFemurHumerus,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
       );
 
       const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
@@ -97,35 +127,144 @@ const Laki = () => {
 
       const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
       setResult(resultString);
-    }
-    // else if (!isNaN(y1Value) && !isNaN(y2Value)) {
-    //   const tinggi1 = 1.22 * y1Value;
-    //   const tinggi2 = 1.08 * y2Value;
+    } else if (!isNaN(y1Value) && !isNaN(y2Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 1,88*y1 + 81,306
+      const resultTinggiFemur = 1.88 * y1Value + 81.306;
 
-    //   //  Tinggi badan = 1,88*y1 + 81,306
-    //   const resultTinggiFemur = 1.88 * y1Value + 81.306;
+      //  Tinggi badan = 2,376*y2 + 78,664
+      const resultTinggiTibia = 2.376 * y2Value + 78.664;
 
-    //   //  Tinggi badan = 2,376*y2 + 78,664
-    //   const resultTinggiTibia = 2.376 * y2Value + 78.664;
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
 
-    //   //  Tinggi badan = 1,22*y1 + 1,08*y2 + 71,443
-    //   const resultTinggiTotal = tinggi1 + tinggi2 + 71.443;
+      //  Tinggi badan = 1,22*y1 + 1,08*y2 + 71,443
+      const resultTinggiTotalFemurFibia1 =
+        1.22 * y1Value + 1.08 * y2Value + 71.443;
 
-    //   const resultMinTinggi = Math.min(
-    //     resultTinggiFemur,
-    //     resultTinggiTibia,
-    //     resultTinggiTotal
-    //   );
-    //   const resultMaxTinggi = Math.max(
-    //     resultTinggiFemur,
-    //     resultTinggiTibia,
-    //     resultTinggiTotal
-    //   );
+      //  Tinggi badan = 1,159*y1 + 1,159*y2 + 71,272
+      const resultTinggiTotalFemurFibia2 =
+        1.159 * y1Value + 1.159 * y2Value + 71.272;
 
-    //   const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
-    //   setResult(resultString);
-    // }
-    else if (!isNaN(y1Value) && !isNaN(y3Value)) {
+      const resultMinTinggi = Math.min(
+        resultTinggiFemur,
+        resultTinggiTibia,
+        resultTinggiRadius,
+        resultTinggiTotalFemurFibia1,
+        resultTinggiTotalFemurFibia2
+      );
+      const resultMaxTinggi = Math.max(
+        resultTinggiFemur,
+        resultTinggiTibia,
+        resultTinggiRadius,
+        resultTinggiTotalFemurFibia1,
+        resultTinggiTotalFemurFibia2
+      );
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y1Value) && !isNaN(y3Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 1,88*y1 + 81,306
+      const resultTinggiFemur = 1.88 * y1Value + 81.306;
+
+      //  Tinggi badan = 2,894*y3 + 70,641
+      const resultTinggiHumerus = 2.894 * y3Value + 70.641;
+
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
+
+      //   Tinggi badan = 1,03*y1 + 1,557*y3 + 68,397
+      const resultTinggiTotalFemurHumerus =
+        1.03 * y1Value + 1.557 * y3Value + 68.397;
+
+      // 	Tinggi badan = 2,769*y3 + 0,195*y4 + 69,788
+      const resultTinggiHumerusRadius1 =
+        2.769 * y3Value + 0.195 * y4Value + 69.788;
+
+      // 	Tinggi badan = 1,73*y3 + 1,73*y4 + 66,885
+      const resultTinggiHumerusRadius2 =
+        1.73 * y3Value + 1.73 * y4Value + 66.885;
+
+      const resultMinTinggi = Math.min(
+        resultTinggiFemur,
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiTotalFemurHumerus,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
+      );
+      const resultMaxTinggi = Math.max(
+        resultTinggiFemur,
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiTotalFemurHumerus,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
+      );
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y2Value) && !isNaN(y3Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 2,376*y2 + 78,664
+      const resultTinggiTibia = 2.376 * y2Value + 78.664;
+
+      //  Tinggi badan = 2,894*y3 + 70,641
+      const resultTinggiHumerus = 2.894 * y3Value + 70.641;
+
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
+
+      // 	Tinggi badan = 2,769*y3 + 0,195*y4 + 69,788
+      const resultTinggiHumerusRadius1 =
+        2.769 * y3Value + 0.195 * y4Value + 69.788;
+
+      // 	Tinggi badan = 1,73*y3 + 1,73*y4 + 66,885
+      const resultTinggiHumerusRadius2 =
+        1.73 * y3Value + 1.73 * y4Value + 66.885;
+
+      const resultMinTinggi = Math.min(
+        resultTinggiTibia,
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
+      );
+      const resultMaxTinggi = Math.max(
+        resultTinggiTibia,
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
+      );
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y1Value) && !isNaN(y2Value)) {
+      const tinggi1 = 1.22 * y1Value;
+      const tinggi2 = 1.08 * y2Value;
+
+      //  Tinggi badan = 1,88*y1 + 81,306
+      const resultTinggiFemur = 1.88 * y1Value + 81.306;
+
+      //  Tinggi badan = 2,376*y2 + 78,664
+      const resultTinggiTibia = 2.376 * y2Value + 78.664;
+
+      //  Tinggi badan = 1,22*y1 + 1,08*y2 + 71,443
+      const resultTinggiTotal = tinggi1 + tinggi2 + 71.443;
+
+      const resultMinTinggi = Math.min(
+        resultTinggiFemur,
+        resultTinggiTibia,
+        resultTinggiTotal
+      );
+      const resultMaxTinggi = Math.max(
+        resultTinggiFemur,
+        resultTinggiTibia,
+        resultTinggiTotal
+      );
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y1Value) && !isNaN(y3Value)) {
       //  Tinggi badan = 1,88*y1 + 81,306
       const resultTinggiFemur = 1.88 * y1Value + 81.306;
 
@@ -145,6 +284,73 @@ const Laki = () => {
         resultTinggiFemur,
         resultTinggiHumerus,
         resultTinggiTotalFemurHumerus
+      );
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y1Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 1,88*y1 + 81,306
+      const resultTinggiFemur = 1.88 * y1Value + 81.306;
+
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
+
+      const resultMinTinggi = Math.min(resultTinggiFemur, resultTinggiRadius);
+      const resultMaxTinggi = Math.max(resultTinggiFemur, resultTinggiRadius);
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y2Value) && !isNaN(y3Value)) {
+      //  Tinggi badan = 2,376*y2 + 78,664
+      const resultTinggiTibia = 2.376 * y2Value + 78.664;
+
+      //  Tinggi badan = 2,894*y3 + 70,641
+      const resultTinggiHumerus = 2.894 * y3Value + 70.641;
+
+      const resultMinTinggi = Math.min(resultTinggiTibia, resultTinggiHumerus);
+      const resultMaxTinggi = Math.max(resultTinggiTibia, resultTinggiHumerus);
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y2Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 2,376*y2 + 78,664
+      const resultTinggiTibia = 2.376 * y2Value + 78.664;
+
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
+
+      const resultMinTinggi = Math.min(resultTinggiTibia, resultTinggiRadius);
+      const resultMaxTinggi = Math.max(resultTinggiTibia, resultTinggiRadius);
+
+      const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
+      setResult(resultString);
+    } else if (!isNaN(y3Value) && !isNaN(y4Value)) {
+      //  Tinggi badan = 2,894*y3 + 70,641
+      const resultTinggiHumerus = 2.894 * y3Value + 70.641;
+
+      //  Tinggi badan = 3,271*y4 + 85,925
+      const resultTinggiRadius = 3.271 * y4Value + 85.925;
+
+      // 	Tinggi badan = 2,769*y3 + 0,195*y4 + 69,788
+      const resultTinggiHumerusRadius1 =
+        2.769 * y3Value + 0.195 * y4Value + 69.788;
+
+      //  Tinggi badan = 1,73*y3 + 1,73*y4 + 66,885
+      const resultTinggiHumerusRadius2 =
+        1.73 * y3Value + 1.73 * y4Value + 66.885;
+
+      const resultMinTinggi = Math.min(
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
+      );
+
+      const resultMaxTinggi = Math.max(
+        resultTinggiHumerus,
+        resultTinggiRadius,
+        resultTinggiHumerusRadius1,
+        resultTinggiHumerusRadius2
       );
 
       const resultString = `TB = ${resultMinTinggi} - ${resultMaxTinggi} cm`;
