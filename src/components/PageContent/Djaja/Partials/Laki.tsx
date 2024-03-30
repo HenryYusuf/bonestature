@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Laki = () => {
   const [y1, setY1] = useState("");
@@ -107,12 +107,21 @@ const Laki = () => {
           />
         </div>
       </div>
-      <div className="mt-16">
-        <button className="btn btn-primary float-right" onClick={hitungTinggi}>
-          Hitung Tinggi
-        </button>
+      <div className="flex flex-col gap-5">
+        <div className="mt-16">
+          <button
+            className="btn btn-primary float-right"
+            onClick={hitungTinggi}
+          >
+            Hitung Tinggi
+          </button>
+        </div>
+        {result && (
+          <div className="self-center bg-success/20 border border-success w-fit p-2 rounded-lg">
+            {result}
+          </div>
+        )}
       </div>
-      {result && <div className="mt-4">{result}</div>}
     </>
   );
 };

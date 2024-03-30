@@ -350,28 +350,31 @@ const AntropologiRagawi = () => {
           </div>
         </div>
 
-        <div className="mt-16">
-          <button
-            className="btn btn-primary float-right"
-            onClick={calculateHeight}
-          >
-            Hitung Tinggi
-          </button>
+        <div className="flex flex-col gap-5">
+          <div className="mt-16">
+            <button
+              className="btn btn-primary float-right"
+              onClick={calculateHeight}
+            >
+              Hitung Tinggi
+            </button>
+          </div>
+          {!isFinite(nilaiTerendah) && !isFinite(nilaiTertinggi) ? (
+            <p></p>
+          ) : (
+            <p className="self-center bg-success/20 border border-success w-fit p-2 rounded-lg">
+              Hasil Perkiraan Tinggi badan: {nilaiTerendah}
+              {nilaiTertinggi === nilaiTerendah
+                ? ""
+                : ` - ${nilaiTertinggi} `}{" "}
+              mm atau {(nilaiTerendah * 0.1).toFixed(2)}{" "}
+              {nilaiTertinggi === nilaiTerendah
+                ? ""
+                : ` - ${(nilaiTertinggi * 0.1).toFixed(2)} `}{" "}
+              cm
+            </p>
+          )}
         </div>
-
-        {!isFinite(nilaiTerendah) && !isFinite(nilaiTertinggi) ? (
-          <p></p>
-        ) : (
-          <p>
-            Hasil Perkiraan Tinggi badan: {nilaiTerendah}
-            {nilaiTertinggi === nilaiTerendah ? "" : ` - ${nilaiTertinggi} `} mm
-            atau {(nilaiTerendah * 0.1).toFixed(2)}{" "}
-            {nilaiTertinggi === nilaiTerendah
-              ? ""
-              : ` - ${(nilaiTertinggi * 0.1).toFixed(2)} `}{" "}
-            cm
-          </p>
-        )}
       </TitleCard>
     </>
   );
