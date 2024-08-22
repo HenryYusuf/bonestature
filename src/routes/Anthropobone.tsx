@@ -1,13 +1,11 @@
 import { useState } from "react";
-import LeftSidebar from "./LeftSidebar";
-import PageContent from "./PageContent";
+import LeftSidebar from "../components/LeftSidebar";
+import PageContent from "../components/PageContent";
 
 const TAB_ITEMS: string[] = [
   "ANTROPOLOGI RAGAWI",
   "DJAJA SURYA ATMADJA",
   "PEARSON",
-  // "SJOVOLD",
-  // "MAHAKKANUKRAUH",
   "STEVENSON",
 ];
 
@@ -20,7 +18,7 @@ const Layout = () => {
 
   return (
     <>
-      <div className="drawer">
+      <div className="drawer lg:drawer-open">
         <input
           id="left-sidebar-drawer"
           type="checkbox"

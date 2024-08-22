@@ -1,7 +1,75 @@
 import { useState } from "react";
-import Card from "../../Card/Card";
+import TitleCard from "../components/Card/TitleCard";
+import { Link } from "react-router-dom";
 
-function Stevenson() {
+const TopSideButtons = () => {
+  return (
+    <>
+      <div className="inline-block float-right">
+        <button
+          className="btn px-6 btn-sm normal-case btn-primary"
+          onClick={() =>
+            (
+              document.getElementById("petunjuk")! as HTMLDialogElement
+            ).showModal()
+          }
+        >
+          Petunjuk Formula
+        </button>
+      </div>
+      <dialog id="petunjuk" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Petunjuk Formula</h3>
+          <p className="py-4 text-base font-normal">
+            ✓ Sampel yang digunakan pada pembuatan formula adalah laki-laki
+            etnis Jawa, tetapi formula ini dapat digunakan pada seluruh etnis
+            dan jenis kelamin.
+          </p>
+          <p className="py-4 text-base font-normal">
+            ✓ Harap ubah <span className="text-info">koma(,)</span> menjadi{" "}
+            <span className="text-info">titik(.)</span> jika angka yang
+            diberikan berupa desimal.
+          </p>
+          <p className="py-4 text-base font-normal">
+            ✓ Masukkan panjang tulang yang dimiliki dalam{" "}
+            <span className="text-info">centimeter (cm)</span>
+          </p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </>
+  );
+};
+
+const CloseButton = () => {
+  return (
+    <Link to={"/"}>
+      <button className="btn btn-square btn-sm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </Link>
+  );
+};
+
+const Stevenson = () => {
   const [y1, setY1] = useState("");
   const [y2, setY2] = useState("");
   const [y3, setY3] = useState("");
@@ -790,91 +858,95 @@ function Stevenson() {
   };
 
   return (
-    <>
-      <Card>
-        <div className="card-body">
-          <p className="font-semibold text-base max-sm:text-sm">
-            <span className="text-red-500">* </span>
-            Sampel yang digunakan pada pembuatan formula adalah laki-laki etnis
-            Jawa, tetapi formula ini dapat digunakan pada seluruh etnis dan
-            jenis kelamin
-          </p>
-          <p className="font-semibold text-base max-sm:text-sm">
-            <span className="text-red-500">* </span>
-            Harap ubah <span className="text-info">koma(,)</span> menjadi{" "}
-            <span className="text-info">titik(.)</span> jika angka yang
-            diberikan berupa desimal.
-          </p>
-          <p className="font-semibold text-base max-sm:text-sm">
-            <span className="text-red-500">* </span>
-            Masukkan panjang tulang yang dimiliki dalam{" "}
-            <span className="text-info">centimeter (cm)</span>
-          </p>
-          <div className="divider"></div>
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <label className="text-base block mb-2 max-sm:text-sm max-md:text-sm">
-                Panjang Tulang Femur
+    <div className="bg-white w-full h-[100dvh]" data-theme="light">
+      <div className="w-11/12 mx-auto py-10">
+        <TitleCard
+          title="Formula Stevenson"
+          topMargin="mt-2"
+          TopSideButtons={<TopSideButtons />}
+          CloseButton={<CloseButton />}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className={"label-text text-base-content"}>
+                  Panjang Tulang Femur
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
                 value={y1}
+                placeholder="Tulis Disini"
                 onChange={(e) => setY1(e.target.value.replace(",", "."))}
                 inputMode="numeric"
+                className="input  input-bordered w-full "
               />
             </div>
-            <div>
-              <label className="text-base block mb-2 max-sm:text-sm max-md:text-sm">
-                Panjang Tulang Humerus
+            <div className="form-control w-full">
+              <label className="label">
+                <span className={"label-text text-base-content"}>
+                  Panjang Tulang Humerus
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full "
                 value={y2}
+                placeholder="Tulis Disini"
                 onChange={(e) => setY2(e.target.value.replace(",", "."))}
                 inputMode="numeric"
+                className="input  input-bordered w-full "
               />
             </div>
-            <div>
-              <label className="text-base block mb-2 max-sm:text-sm max-md:text-sm">
-                Panjang Tulang Tibia
+            <div className="form-control w-full">
+              <label className="label">
+                <span className={"label-text text-base-content"}>
+                  Panjang Tulang Tibia
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
                 value={y3}
+                placeholder="Tulis Disini"
                 onChange={(e) => setY3(e.target.value.replace(",", "."))}
                 inputMode="numeric"
+                className="input  input-bordered w-full "
               />
             </div>
-            <div>
-              <label className="text-base block mb-2 max-sm:text-sm max-md:text-sm">
-                Panjang Tulang Radius
+            <div className="form-control w-full">
+              <label className="label">
+                <span className={"label-text text-base-content"}>
+                  Panjang Tulang Radius
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full"
                 value={y4}
+                placeholder="Tulis Disini"
                 onChange={(e) => setY4(e.target.value.replace(",", "."))}
                 inputMode="numeric"
+                className="input  input-bordered w-full "
               />
             </div>
           </div>
-          <div className="card-actions justify-center mt-4">
-            <button className="btn btn-primary" onClick={hitungTinggi}>
-              Hitung Tinggi
-            </button>
+          <div className="flex flex-col gap-5">
+            <div className="mt-16">
+              <button
+                className="btn btn-primary float-right"
+                onClick={hitungTinggi}
+              >
+                Hitung Tinggi
+              </button>
+            </div>
+            {result && (
+              <div className="self-center bg-success/20 border border-success w-fit p-2 rounded-lg">
+                {result}
+              </div>
+            )}
           </div>
-          {result && <div className="mt-4">{result}</div>}
-        </div>
-      </Card>
-    </>
+        </TitleCard>
+      </div>
+    </div>
   );
-}
+};
 
 export default Stevenson;

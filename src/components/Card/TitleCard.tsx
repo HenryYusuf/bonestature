@@ -5,28 +5,38 @@ interface Props {
   children: React.ReactNode;
   topMargin?: string;
   TopSideButtons?: React.ReactNode;
+  CloseButton?: React.ReactNode;
 }
 
-const TitleCard = ({ title, children, topMargin, TopSideButtons }: Props) => {
+const TitleCard = ({
+  title,
+  children,
+  topMargin,
+  TopSideButtons,
+  CloseButton,
+}: Props) => {
   return (
     <div
       className={
-        "card w-full p-6 bg-base-100 shadow-xl " + (topMargin || "mt-6")
+        "card border w-full p-6 bg-base-100 shadow-xl " + (topMargin || "mt-6")
       }
     >
       {/* Title for Card */}
       <Subtitle
-        styleClass={
-          TopSideButtons
-            ? "flex flex-col items-start gap-2 lg:inline-block"
-            : ""
-        }
+        styleClass={TopSideButtons ? "flex flex-row justify-between gap-2" : ""}
       >
         {title}
 
         {/* Top side button, show only if present */}
         {TopSideButtons && (
-          <div className="inline-block float-right">{TopSideButtons}</div>
+          <div className="self-center grow">{TopSideButtons}</div>
+        )}
+
+        {/* Close Button */}
+        {CloseButton && (
+          <div className="self-center mt-2 lg:mt-0 flex-none">
+            {CloseButton}
+          </div>
         )}
       </Subtitle>
 
